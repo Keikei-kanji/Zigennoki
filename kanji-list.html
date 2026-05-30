@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body>
+
+<header>
+    
+<div class="oracle-bg">
+
+<div class="oracle oracle1"></div>
+
+<div class="oracle oracle2"></div>
+
+<div class="oracle oracle3"></div>
+
+<div class="oracle oracle4"></div>
+
+</div>
+
+<h1>
+漢字一覧
+</h1>
+
+<h2>
+収録字数 : 6
+</h2>
+
+</header>
+
+<div class="backArea">
+
+<button
+class="backButton"
+
+onclick="
+location.href=
+'index.html'
+">
+
+← 字源の樹へ戻る
+
+</button>
+
+</div>
+
+<div
+class="grid"
+id="grid">
+</div>
+
+</body>
+
+<title>
+字源の樹｜漢字・字源・古文字資料樹
+</title>
+
+<footer>
+字源の樹 ver.Beta
+</footer>
+
+<meta charset="UTF-8">
+
+<meta
+name="google-site-verification"
+content="2VssbEDiziHdfOWuRF9zMfZusaRlQFxDXjucVjos0Tg"
+/>
+
+<style>
+
+/* 戻るボタン */
+
+.backArea{
+
+max-width:
+1320px;
+
+margin:
+24px auto 10px;
+
+padding:
+0 16px;
+
+}
+
+.backButton{
+
+background:
+linear-gradient(
+180deg,
+#cfeeff,
+#b8e3ff
+);
+
+border:none;
+
+padding:
+12px 22px;
+
+border-radius:
+14px;
+
+font-size:
+15px;
+
+font-weight:
+700;
+
+color:
+#3f5e75;
+
+cursor:pointer;
+
+transition:
+.18s;
+
+box-shadow:
+0 2px 8px
+rgba(
+0,
+0,
+0,
+0.06
+);
+
+}
+
+.backButton:hover{
+
+transform:
+translateY(-2px);
+
+background:
+#a7dbff;
+
+}
+
+.backButton:active{
+
+transform:
+translateY(0);
+
+background:
+#9ed7ff;
+
+}
+
+body{
+
+margin:0;
+
+font-family:sans-serif;
+
+background:#cfeeff;
+
+color:#222222;
+
+}
+
+/* ヘッダー */
+
+header{
+
+position:relative;
+
+padding:50px 40px;
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#eaf6ff 0%,
+#cfeeff 40%,
+#b8e3ff 100%
+);
+
+overflow:hidden;
+
+box-shadow:
+0 8px 30px
+rgba(
+0,
+0,
+0,
+0.08
+);
+
+}
+
+/* 左上（小） */
+.oracle1{
+    width:120px;
+    height:120px;
+    top:20px;
+    left:30px;
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ef%a0%a1&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%ba%8c&size=36&style=regular&color=%23000000");
+}
+
+/* 左中央（中） */
+.oracle2{
+    width:180px;
+    height:180px;
+    top:120px;
+    left:180px;
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ee%81%8f&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%b8%89&size=36&style=regular&color=%23000000");
+}
+
+/* 右下（大） */
+.oracle3{
+    width:260px;
+    height:260px;
+    bottom:10px;
+    right:20px;
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ef%8f%8d&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%b8%80&size=36&style=regular&color=%23000000");
+}
+
+/* 真ん中より少し上（中〜やや大） */
+.oracle4{
+    width:180px;
+    height:180px;
+    top:67px;
+    left:63%;
+    transform: translateX(-50%);
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ee%86%9d&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%b8%89&size=36&style=regular&color=%23000000");
+}
+
+
+/* 背景 */
+
+.oracle-bg{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+.oracle{
+
+position:absolute;
+
+background-repeat:no-repeat;
+
+background-size:contain;
+
+opacity:.08;
+
+filter:grayscale(1);
+
+}
+
+header::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+radial-gradient(
+rgba(
+255,
+255,
+255,
+0.35
+)
+1px,
+transparent 1px
+);
+
+background-size:
+18px 18px;
+
+opacity:.25;
+
+}
+
+header h1{
+
+margin:0;
+
+font-size:78px;
+
+font-weight:900;
+
+letter-spacing:4px;
+
+color:black;
+
+}
+
+header p{
+
+margin-top:12px;
+
+font-size:16px;
+
+}
+
+/* 一覧 */
+
+/* 一覧 */
+
+.grid{
+
+padding:
+40px 16px 60px;
+
+display:grid;
+
+/* 横6枚 */
+grid-template-columns:
+repeat(
+6,
+1fr
+);
+
+width:100%;
+
+max-width:
+1320px;
+
+margin:
+0 auto;
+
+gap:
+16px;
+
+box-sizing:
+border-box;
+
+}
+
+/* カード */
+
+.card{
+
+width:100%;
+
+/* 縦長 */
+height:260px;
+
+background:white;
+
+border-radius:18px;
+
+overflow:hidden;
+
+cursor:pointer;
+
+transition:.22s;
+
+box-shadow:
+0 4px 14px
+rgba(
+0,
+0,
+0,
+0.07
+);
+
+}
+
+.card:hover{
+
+transform:
+translateY(-4px);
+
+box-shadow:
+0 8px 20px
+rgba(
+0,
+0,
+0,
+0.10
+);
+
+}
+
+/* 上帯 */
+
+.cardTop{
+
+height:55px;
+
+background:#cfeeff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:14px;
+
+font-weight:700;
+
+color:white;
+
+letter-spacing:.5px;
+
+}
+
+/* 漢字 */
+
+.cardBody{
+
+height:
+200px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:
+66px;
+
+font-weight:
+650;
+
+color:#111;
+
+}
+
+/* フッター */
+
+footer{
+
+margin-top:
+100px;
+
+padding:
+40px
+20px;
+
+text-align:
+center;
+
+font-size:
+13px;
+
+font-weight:
+600;
+
+color:
+#7f8b93;
+
+background:
+#ffffff;
+
+border-top:
+1px solid
+#edf1f4;
+
+}
+
+body{
+
+background:
+
+linear-gradient(
+#ffffff,
+#caeaff
+);
+
+background-image:
+
+linear-gradient(
+rgba(207,238,255,.22)
+1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(207,238,255,.22)
+1px,
+transparent 1px
+);
+
+background-size:
+36px 36px;
+
+}
+
+</style>
+
+</head>
+
+
+<div class="grid"
+id="grid">
+</div>
+
+<script>
+
+const db=
+(
+JSON.parse(
+localStorage.getItem(
+"kanjiDB"
+)
+)||[]
+)
+
+.filter(
+item=>
+item &&
+item.kanji &&
+item.kanji.trim()!==""
+);
+
+const grid=
+document.getElementById(
+"grid"
+);
+
+db.forEach(
+(item,index)=>{
+
+const card=
+document.createElement(
+"div"
+);
+
+card.className=
+"card";
+
+card.innerHTML=`
+
+<div class="cardTop">
+No.${index+1}
+</div>
+
+<div class="cardBody">
+${item.kanji}
+</div>
+
+`;
+
+card.onclick=()=>{
+
+localStorage.setItem(
+"selectedKanji",
+item.kanji
+);
+
+location.href=
+"index.html";
+
+};
+
+grid.append(card);
+
+});
+
+</script>
+
+
+
+</html>
