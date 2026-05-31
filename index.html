@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+字源の樹｜漢字・字源・古文字資料庫
+</title>
+
+<meta name="google-site-verification" content="2VssbEDiziHdfOWuRF9zMfZusaRlQFxDXjucVjos0Tg" />
+
+<style>
+
+/* 初期状態（まだ見えない） */
+header h1{
+
+opacity:0;
+
+transform:
+translateY(20px);
+
+}
+
+header h3{
+
+opacity:0;
+
+}
+
+/* ロード完了後に開始 */
+#page.loaded header h1{
+
+animation:
+titleAppear
+1.1s
+ease
+forwards;
+
+animation-delay:.15s;
+
+}
+
+#page.loaded header h3{
+
+animation:
+fade
+1s
+ease
+forwards;
+
+animation-delay:.45s;
+
+}
+
+@keyframes titleAppear{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:#ffffff;
+    color:#222;
+}
+
+header{
+    position: relative;
+    padding: 50px 40px;
+    text-align: center;
+
+    /* グラデーションを上品化 */
+    background: linear-gradient(
+        135deg,
+        #eaf6ff 0%,
+        #cfeeff 40%,
+        #b8e3ff 100%
+    );
+
+    overflow: hidden;
+
+    /* 影を柔らかく */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+
+        position: relative;
+    padding: 50px 40px;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #eaf6ff 0%,
+        #cfeeff 40%,
+        #b8e3ff 100%
+    );
+
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+header{
+    position:relative;
+
+    padding:70px 40px 80px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,.55),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #eef8ff 0%,
+            #d6efff 45%,
+            #b9e4ff 100%
+        );
+
+    overflow:hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.7);
+}
+
+.news-box{
+    background:white;
+    border-radius:20px;
+    padding:24px;
+    margin-bottom:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    border:1px solid #e8e8e8;
+}
+
+.news-box h3{
+    margin-top:0;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+.news-item{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+    line-height:1.8;
+}
+
+.news-item:last-child{
+    border-bottom:none;
+}
+
+/* 背景レイヤー */
+.oracle-bg{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+/* 共通 */
+.oracle{
+    position:absolute;
+    background-repeat:no-repeat;
+    background-size:contain;
+    opacity:0.08;
+    filter: grayscale(1);
+}
+
+/* 左上（小） */
+.oracle1{
+    width:120px;
+    height:120px;
+    top:20px;
+    left:30px;
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ef%a0%a1&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%ba%8c&size=36&style=regular&color=%23000000");
+}
+
+/* 左中央（中） */
+.oracle2{
+    width:180px;
+    height:180px;
+    top:120px;
+    left:180px;
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ee%81%8f&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%b8%89&size=36&style=regular&color=%23000000");
+}
+
+/* 右下（大） */
+.oracle3{
+    width:260px;
+    height:260px;
+    bottom:10px;
+    right:20px;
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ef%8f%8d&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%b8%80&size=36&style=regular&color=%23000000");
+}
+
+/* 真ん中より少し上（中〜やや大） */
+.oracle4{
+    width:180px;
+    height:180px;
+    top:67px;
+    left:63%;
+    transform: translateX(-50%);
+    background-image:url("https://xiaoxue.iis.sinica.edu.tw/ImageText2/ShowImage.ashx?text=%ee%86%9d&font=%e4%b8%ad%e7%a0%94%e9%99%a2%e7%94%b2%e9%aa%a8%e6%96%87%e9%87%8d%e6%96%87%e4%b8%89&size=36&style=regular&color=%23000000");
+}
+
+/* 微細な模様（紙っぽさ・奥行き） */
+header::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity: 0.25;
+    pointer-events:none;
+}
+
+/* タイトル */
+header h1{
+    margin:0;
+    font-size:78px;
+    font-weight:900;
+    letter-spacing:4px;
+
+    color:#000000;
+
+    /* ほんの少し浮かせる */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* サブタイトル */
+header p{
+    margin-top:10px;
+    color:#000000;
+    font-size:16px;
+    letter-spacing:1px;
+}
+
+header h1{
+    margin:0;
+    font-size:78px;
+    font-weight:900;
+    letter-spacing:4px;
+}
+
+header p{
+    margin-top:10px;
+    color:#555;
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+    padding:30px;
+}
+
+.add-btn{
+    border:none;
+    background:#4da3ff;
+    color:white;
+    padding:14px 22px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.search-area{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:30px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.mode-buttons{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.mode-buttons button{
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    background:#d9ecff;
+    font-weight:bold;
+}
+
+.mode-buttons button.active{
+    background:#4da3ff;
+    color:white;
+}
+
+.search-box{
+    display:flex;
+    gap:10px;
+}
+
+.search-box input{
+    flex:1;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:12px;
+    font-size:18px;
+}
+
+.search-box button{
+    border:none;
+    background:#4da3ff;
+    color:white;
+    padding:15px 25px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.card{
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    margin-bottom:35px;
+    box-shadow:0 3px 15px rgba(0,0,0,0.08);
+    border:1px solid #e5e5e5;
+}
+
+.card-top{
+    background:#eaf6ff;
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    position:relative;
+    overflow:hidden;
+}
+
+.no-decoration{
+    position:absolute;
+    right:-20px;
+    bottom:-18px;
+    background:rgba(90,170,255,0.55);
+    color:white;
+    padding:18px 32px;
+    border-radius:24px;
+    font-size:18px;
+    font-weight:bold;
+    transform:rotate(-7deg);
+    backdrop-filter:blur(3px);
+}
+
+.kanji-area{
+    display:flex;
+    gap:35px;
+    align-items:flex-start;
+    z-index:2;
+}
+
+.big-kanji{
+    font-size:92px;
+    font-weight:bold;
+    line-height:1;
+}
+
+.info-row{
+    display:flex;
+    gap:35px;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+.info-item{
+    min-width:120px;
+}
+
+.code-label{
+    font-size:13px;
+    color:#666;
+    margin-bottom:4px;
+}
+
+.code-value{
+    font-weight:bold;
+}
+
+.edit-btn{
+    border:none;
+    background:#d1ebff;
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:24px;
+    color:#4da3ff;
+    font-weight:bold;
+    z-index:2;
+}
+
+.edit-btn:hover{
+    background:#b8e0ff;
+}
+
+.card-body{
+    padding:28px;
+}
+
+.main-grid{
+    display:grid;
+    grid-template-columns:1fr 4.2fr 2.5fr;
+    gap:35px;
+    margin-bottom:35px;
+}
+
+.label{
+    color:#777;
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.value{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.section-title{
+    font-size:28px;
+    font-weight:bold;
+    margin-top:12px;
+    margin-bottom:12px;
+}
+
+.text-block{
+    line-height:1.9;
+    font-size:18px;
+}
+
+.variant-text{
+    font-size:32px;
+    line-height:1.8;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.sound-divider{
+    height:1px;
+    background:#e5e5e5;
+    margin:22px 0;
+}
+
+.sound-row{
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+}
+
+.sound-row > div{
+    min-width:100px;
+}
+
+.image-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
+.image-box{
+    background:#fafafa;
+    border:1px solid #eee;
+    border-radius:16px;
+    padding:15px;
+    text-align:center;
+}
+
+.image-box img{
+    width:100%;
+    height:70px;
+    object-fit:contain;
+}
+
+.image-gallery{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+}
+
+.source-box{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid #eee;
+}
+
+.source-text{
+    color:#555;
+    line-height:1.8;
+}
+
+footer{
+
+margin-top:
+100px;
+
+padding:
+40px
+20px;
+
+text-align:
+center;
+
+font-size:
+13px;
+
+font-weight:
+600;
+
+color:
+#7f8b93;
+
+background:
+#ffffff;
+
+border-top:
+1px solid
+#edf1f4;
+
+}
+
+/* 編集画面 */
+
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:760px;
+    border-radius:24px;
+    padding:30px;
+    max-height:90vh;
+    overflow:auto;
+}
+
+.modal-title{
+    font-size:30px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    color:#666;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+.form-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.modal-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+}
+
+.save-btn{
+    border:none;
+    background:#4da3ff;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.cancel-btn{
+    border:none;
+    background:#ddd;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    .main-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .big-kanji{
+        font-size:68px;
+    }
+
+    .card-top{
+        flex-direction:column;
+    }
+
+}
+
+.intro-box{
+    background:white;
+    border-radius:24px;
+    padding:28px;
+    margin-bottom:28px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    border:1px solid #e8e8e8;
+}
+
+.intro-box h2{
+    margin-top:0;
+    font-size:34px;
+    margin-bottom:14px;
+}
+
+.intro-box p{
+    line-height:1.9;
+    color:#555;
+    font-size:17px;
+}
+
+.card{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.35s ease forwards;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-box{
+    background:white;
+    border-radius:20px;
+    padding:24px;
+    margin-bottom:25px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.06);
+    border:1px solid #e8e8e8;
+}
+
+.news-box h3{
+    margin-top:0;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+.news-item{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+    line-height:1.8;
+}
+
+.news-item:last-child{
+    border-bottom:none;
+}
+
+/* 最初は隠す */
+.old-news{
+    display:none;
+}
+
+.news-toggle-btn{
+    margin-top:18px;
+    border:none;
+    background:#4da3ff;
+    color:white;
+    padding:12px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+.note-label{
+    margin-bottom:0;
+    margin:0 0 2px 0;
+    padding:0;
+
+    font-size:24px;
+    font-weight:bold;
+    line-height:1.1;
+}
+
+.note-box{
+    margin:0;
+    padding:0;
+
+    white-space:pre-wrap;
+
+    line-height:1.5;
+    font-size:15px;
+    color:#555;
+
+    text-align:left;
+}
+
+/* 諧声表との間 */
+.xiesheng-section{
+    margin-top:20px;
+}
+
+/* 補足全体 */
+.note-section{
+    margin-top:16px;
+}
+
+.note-label{
+    margin:0 0 6px 0;
+}
+
+.xiesheng-note{
+    margin-bottom:4px;
+}
+
+.xiesheng-note{
+    margin-bottom:6px;
+}
+
+.xiesheng-section{
+    margin-top:35px;
+}
+
+.xiesheng-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    margin-top:14px;
+    font-size:15px;
+    border:1px solid #dcdcdc;
+    border-radius:14px;
+}
+
+.xiesheng-table tbody tr:last-child td{
+    border-bottom:1px solid #dddddd;
+}
+
+/* 全体の枠 */
+.xiesheng-table th,
+.xiesheng-table td{
+    border:1px solid #dddddd;
+    padding:10px 12px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+/* 一段目 */
+.xiesheng-table thead tr:first-child th{
+    background:#7db8f8;
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+}
+
+/* 二段目 */
+.xiesheng-table thead tr:nth-child(2) th{
+    background:#b0d9ff;
+    color:white;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* データ部分 */
+.xiesheng-table tbody td{
+    background:white;
+}
+
+/* 偶数行 */
+.xiesheng-table tbody tr:nth-child(even) td{
+    background:#fafcff;
+}
+
+/* hover */
+.xiesheng-table tbody tr:hover td{
+    background:#eef6ff;
+}
+
+.oc-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+    margin-bottom:15px;
+}
+
+.oc-buttons button{
+    border:none;
+    padding:7px 14px;
+    border-radius:8px;
+    background:#d9ecff;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.oc-buttons button.active{
+    background:#4da3ff;
+    color:white;
+}
+
+.source-text ul{
+    margin:8px 0 0 20px;
+    padding:0;
+}
+
+.source-text li{
+    margin-bottom:6px;
+    line-height:1.8;
+}
+
+.xiesheng-note{
+    margin-top:10px;
+    margin-bottom:4px;
+    color:#666;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.empty-message{
+    text-align:center;
+    color:#999;
+    font-size:15px;
+    margin-top:45px;
+    margin-bottom:30px;
+}
+
+.initial-message{
+    text-align:center;
+    color:#888;
+    margin:70px 0;
+    font-size:18px;
+}
+
+/* ロード画面 */
+
+#loading{
+
+position:fixed;
+
+inset:0;
+
+background:white;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+}
+
+/* 丸 */
+
+.loader{
+
+width:54px;
+
+height:54px;
+
+border:
+
+5px solid
+#eaf6ff;
+
+border-top:
+
+5px solid
+#b8e3ff;
+
+border-radius:50%;
+
+animation:
+
+spin 1s linear infinite;
+
+}
+
+/* 文字 */
+
+.loadingText{
+
+margin-top:18px;
+
+font-size:14px;
+
+color:#7a8c99;
+
+}
+
+@keyframes spin{
+
+to{
+
+transform:
+rotate(
+360deg
+);
+
+}
+
+}
+
+</style>
+
+<meta name="description"
+content="字源の樹は、漢字の字源・古文字・上古音・中古音・異体字などを掲載する漢字資料サイトです。古文字学などの最近の知見等を踏まえて、学習資料として公開することを目標としています。">
+
+<meta name="keywords"
+content="
+漢字,字源,古文字,甲骨文,金文,上古音,
+中古音,漢字資料,漢字辞典,説文解字,
+字形,篆書,簡帛文字,漢字学・古文字学・中国語・字源の樹
+">
+
+</head>
+
+<div id="page">
+
+<!-- 今あるサイト全体をこの中へ -->
+
+
+<header>
+    
+    <div class="oracle-bg">
+        <div class="oracle oracle1"></div>
+        <div class="oracle oracle2"></div>
+        <div class="oracle oracle3"></div>
+        <div class="oracle oracle4"></div>
+    </div>
+
+
+    <h1>字源の樹</h1>
+    <h3>収録字数 : 6</h3>
+
+</header>
+
+<div class="container">
+
+<div class="intro-box">
+
+<div class="news-box">
+
+<h3>更新情報</h3>
+
+<div class="news-item">
+2026/05/31　公開
+</div>
+
+<button class="news-toggle-btn"
+onclick="toggleNews()">
+過去の更新を見る
+</button>
+
+
+</div>
+
+
+<h2>字源の樹とは？</h2>
+
+<p>
+字源の樹は、漢字の字源・古文字・上古音・中古音・異体字などを整理し、
+掲載するための漢字資料サイトです。現在の定説である字源説を掲載しております。
+</p>
+
+
+<h2>漢字の字源説について</h2>
+
+<p>
+現在、世間で宣われる字源説というのは謬説や民間俗説が大半を占めています。
+テレビ番組やネット記事(一部除く)だけではなく、漢字辞典・漢和辞典もあろうことにそのような謬説を掲載していることが多々あります。
+現在古文字学界での定説を掲載している漢字記事は、ネットや一部の古文字学研究をまとめたもののみに限ります。そのような現状を踏まえ、
+このサイトでは、主に</p>
+<ul>
+
+<li>漢字のUnicode/JIS X 2013</li>
+<li>読み方</li>
+<li>意味</li>
+<li>異体字</li>
+<li>古文字学の研究に基づいた字源説</li>
+<li>上古音・中古音・広東・越南・韓国での発音</li>
+<li>古文字変遷</li>
+
+</ul>
+<p>
+を掲載しております。漢字を調べる際のツールとして使ってもらえれば結構です。ですが、
+このサイトはあくまで上古音や字源などを主軸としているので、人名読みは除外していますし、意味は最低限です。異体字に関しては、unicodeで表記できないものは掲載していません。
+(上古音において、()で囲まれている物は私が布之道体系と同様の方法で予想した再建です)
+</p>
+
+
+<h2>参考資料</h2>
+<p>
+本サイトでの参考文献は、下部の「引用」欄に記載しております。
+</p>
+
+<h2>No.について</h2>
+<p>
+本サイトにおいて、漢字にNo.が振ってありますが、これは追加した順番についたもので、特に意味はありません。プログラム上で識別するためのものなので意味はありません。(気まぐれで変えることもありますが)</p>
+
+
+</div>
+
+<div class="search-area">
+
+    <div class="mode-buttons">
+        <button id="kanjiMode" class="active"
+        onclick="setMode('kanji')">
+        漢字検索
+        </button>
+
+        <button id="readingMode"
+        onclick="setMode('reading')">
+        読み検索
+        </button>
+
+<button onclick="openKanjiList()">
+漢字一覧
+</button>
+
+    </div>
+
+    <div class="search-box">
+<input
+type="text"
+id="searchInput"
+placeholder="検索"
+onkeydown="handleSearchKey(event)"
+oninput="handleInputChange()">
+        <button onclick="searchKanji()">検索</button>
+    </div>
+
+</div>
+
+<div id="kanjiContainer">
+
+<p class="initial-message">
+上部の検索欄から漢字を検索してください。
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+字源の樹 ver.Beta
+</footer>
+
+<!-- 編集画面 -->
+
+<div class="modal" id="editModal">
+
+<div class="modal-content">
+
+<div class="modal-title">編集</div>
+
+<div class="form-group">
+<label>No.</label>
+<input type="text" id="editNo">
+</div>
+
+<div class="form-group">
+<label>漢字</label>
+<input type="text" id="editKanji">
+</div>
+
+<div class="form-group">
+<label>Unicode</label>
+<input type="text" id="editUnicode">
+</div>
+
+<div class="form-group">
+<label>CJK統合漢字</label>
+<input type="text" id="editCJK">
+</div>
+
+<div class="form-group">
+<label>画数</label>
+<input type="text" id="editStrokes">
+</div>
+
+<div class="form-group">
+<label>音読み</label>
+<input type="text" id="editOnyomi">
+</div>
+
+<div class="form-group">
+<label>訓読み</label>
+<input type="text" id="editKunyomi">
+</div>
+
+<div class="sound-row">
+
+<div class="form-group">
+<label>韓国漢字音</label>
+<input type="text" id="editKorean">
+</div>
+
+<div class="form-group">
+<label>漢越音</label>
+<input type="text" id="editVietnamese">
+</div>
+
+<div class="form-group">
+<label>広東語</label>
+<input type="text" id="editCantonese">
+</div>
+
+</div>
+
+<div class="form-group">
+<label>意味</label>
+<textarea id="editMeaning"></textarea>
+</div>
+
+<div class="form-group">
+<label>字源</label>
+<textarea id="editEtymology"></textarea>
+</div>
+
+<div class="form-group">
+<label>補足</label>
+<textarea id="editNotes"></textarea>
+</div>
+
+<div class="form-group">
+<label>異体字</label>
+<textarea id="editVariants"></textarea>
+</div>
+
+<div class="form-group">
+<label>引用元</label>
+<textarea id="editSource"></textarea>
+</div>
+
+<div class="form-group">
+<label>甲骨文字URL（複数は改行）</label>
+<textarea id="editOracle"></textarea>
+</div>
+
+<div class="form-group">
+<label>金文URL（複数は改行）</label>
+<textarea id="editBronze"></textarea>
+</div>
+
+<div class="form-group">
+<label>簡帛文字URL（複数は改行）</label>
+<textarea id="editBamboo"></textarea>
+</div>
+
+<div class="form-group">
+<label>簡牘文字URL（複数は改行）</label>
+<textarea id="editSlip"></textarea>
+</div>
+
+<div class="form-group">
+<label>篆書URL（複数は改行）</label>
+<textarea id="editSeal"></textarea>
+</div>
+
+<div class="modal-buttons">
+<button class="cancel-btn"
+onclick="closeModal()">
+キャンセル
+</button>
+
+<button class="save-btn"
+onclick="saveKanji()">
+保存
+</button>
+</div>
+
+
+</div>
+</div>
+
+<script>
+
+const start=
+Date.now();
+
+function openKanjiList(){
+
+console.log(kanjiDB);
+
+localStorage.setItem(
+"kanjiDB",
+JSON.stringify(
+kanjiDB
+)
+);
+
+location.href=
+"kanji-list.html";
+
+}
+
+function openKanjiList(){
+
+    localStorage.setItem(
+        "kanjiDB",
+        JSON.stringify(kanjiDB)
+    );
+
+    location.href=
+    "kanji-list.html";
+
+}
+
+function handleInputChange(){
+
+    const text =
+        document.getElementById("searchInput").value.trim();
+
+    // 空になったら表示を消す
+    if(text === ""){
+
+        currentView = [];
+
+        document.getElementById("kanjiContainer").innerHTML = `
+            <p class="initial-message">
+            上部の検索欄から漢字を検索してください。
+            </p>
+        `;
+    }
+
+}
+
+let ocSystem = "fushido";
+
+let searchMode = "kanji";
+let currentIndex = null;
+
+let currentView = [];
+
+function setMode(mode){
+
+    searchMode = mode;
+
+    document.getElementById("kanjiMode")
+    .classList.remove("active");
+
+    document.getElementById("readingMode")
+    .classList.remove("active");
+
+    if(mode === "kanji"){
+        document.getElementById("kanjiMode")
+        .classList.add("active");
+    }else{
+        document.getElementById("readingMode")
+        .classList.add("active");
+    }
+
+}
+
+function createImages(images){
+
+if(!images?.length)
+return "なし";
+
+return `
+
+<div class="image-gallery">
+
+${images.map(img=>
+
+`<img
+src="${img}"
+loading="lazy"
+decoding="async"
+>`
+
+).join("")}
+
+</div>
+
+`;
+
+}
+
+function displayKanji(data){
+
+
+
+const container =
+document.getElementById("kanjiContainer");
+
+container.innerHTML = "";
+
+data.forEach((item,index)=>{
+
+container.innerHTML += `
+
+<div class="card" style="animation-delay:${index * 60}ms">
+
+<div class="card-top">
+
+<div class="no-decoration">
+No.${item.no}
+</div>
+
+<div class="kanji-area">
+
+<div class="big-kanji">
+${item.kanji}
+</div>
+
+<div class="info-row">
+
+<div class="info-item">
+<div class="code-label">Unicode</div>
+<div class="code-value">${item.unicode}</div>
+</div>
+
+<div class="info-item">
+<div class="code-label">JIS X 0213</div>
+<div class="code-value">${item.jis}</div>
+</div>
+
+<div class="info-item">
+<div class="code-label">画数</div>
+<div class="code-value">${item.strokes}</div>
+</div>
+
+</div>
+</div>
+
+
+
+</div>
+
+<div class="card-body">
+
+<div class="main-grid">
+
+<div>
+
+<div class="label">音読み</div>
+<div class="value">${item.onyomi}</div>
+
+<div class="label">訓読み</div>
+<div class="value">${item.kunyomi}</div>
+
+<div class="sound-divider"></div>
+
+<div class="sound-row">
+
+<div class="sound-row">
+
+<div>
+<div class="label">韓国漢字音</div>
+<div class="value">${item.korean || ""}</div>
+</div>
+
+<div>
+<div class="label">漢越音</div>
+<div class="value">${item.vietnamese || ""}</div>
+</div>
+
+<div>
+<div class="label">広東語</div>
+<div class="value">${item.cantonese || ""}</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="section-title">
+意味
+</div>
+
+<div class="text-block">
+${item.meaning}
+</div>
+
+<div class="section-title">
+字源
+</div>
+
+<div class="text-block">
+${item.etymology.replace(/\n/g,"<br>")}
+</div>
+
+</div>
+
+<div>
+
+<div class="section-title">
+異体字
+</div>
+
+<div class="variant-text">
+${item.variants}
+</div>
+
+</div>
+
+</div>
+
+<div class="image-grid">
+
+<div class="image-box">
+<div class="label">甲骨文字</div>
+${createImages(item.oracle)}
+</div>
+
+<div class="image-box">
+<div class="label">金文</div>
+${createImages(item.bronze)}
+</div>
+
+<div class="image-box">
+<div class="label">簡帛文字</div>
+${createImages(item.bamboo)}
+</div>
+
+<div class="image-box">
+<div class="label">簡牘文字</div>
+${createImages(item.slip)}
+</div>
+
+<div class="image-box">
+<div class="label">篆書</div>
+${createImages(item.seal)}
+</div>
+
+</div>
+
+${
+getXiesheng(item.kanji) && getXiesheng(item.kanji).length
+? `
+<div class="xiesheng-section">
+
+<div class="section-title">
+諧声域
+</div>
+
+<table class="xiesheng-table">
+
+<thead>
+
+<tr>
+
+<th rowspan="2">諧声域</th>
+
+<th rowspan="2">字</th>
+
+<th rowspan="1">上古音</th>
+
+<th colspan="6">中古音</th>
+
+<th colspan="2">普通話</th>
+
+<th colspan="3">日本語</th>
+
+</tr>
+
+<tr>
+
+<th>再構音</th>
+
+<th>声母</th>
+<th>韻母</th>
+<th>等呼</th>
+<th>声調</th>
+<th>転写</th>
+<th>反切</th>
+
+<th>拼音</th>
+<th>注音</th>
+
+<th>呉音</th>
+<th>漢音</th>
+<th>唐音</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+${(() => {
+
+    const rows = getXiesheng(item.kanji);
+
+    const subgroupMap = {};
+
+    rows.forEach(row => {
+
+        const key = row.subgroup || row.kanji;
+
+        if(!subgroupMap[key]){
+            subgroupMap[key] = [];
+        }
+
+        subgroupMap[key].push(row);
+
+    });
+
+    const subgroupKeys = Object.keys(subgroupMap);
+
+    return subgroupKeys.map((key, index) => {
+
+        const first = subgroupMap[key][0];
+
+        return `
+
+<tr>
+
+${
+index === 0
+? `<td rowspan="${subgroupKeys.length}">
+${first.group || ""}
+</td>`
+: ""
+}
+
+<td>
+${subgroupMap[key]
+    .map(v => v.kanji)
+    .join("")}
+</td>
+
+<td>${first.ocRecon?.[ocSystem] || ""}</td>
+
+<td>${first.initial || ""}</td>
+<td>${first.final || ""}</td>
+<td>${first.denghu || ""}</td>
+<td>${first.tone || ""}</td>
+<td>${first.mc?.[ocSystem] || ""}</td>
+<td>${first.fanqie || ""}</td>
+
+<td>${first.pinyin || ""}</td>
+<td>${first.zhuyin || ""}</td>
+
+<td>${first.goon || ""}</td>
+<td>${first.kanon || ""}</td>
+<td>${first.touon || ""}</td>
+
+</tr>
+
+`;
+
+    }).join("");
+
+})()}
+
+</tbody>
+
+</table>
+
+<!--
+<div class="oc-buttons">
+
+<button
+onclick="setOCSystem('fushido')"
+id="btnFushi"
+class="${ocSystem === 'fushido' ? 'active' : ''}">
+布之道体系
+</button>
+
+<button
+onclick="setOCSystem('baxterSagart')"
+id="btnBS"
+class="${ocSystem === 'baxterSagart' ? 'active' : ''}">
+Baxter-Sagart体系
+</button>
+
+</div>
+-->
+
+</table>
+
+${
+item.notes
+? `
+<div class="note-section">
+
+<div class="note-label">
+補足
+</div>
+
+<div class="note-box">${item.notes}</div>
+
+</div>
+`
+: ""
+}
+<div class="source-box">
+    
+<div class="label">
+ 引用元
+</div>
+
+
+
+<div class="source-text">
+<ul>
+${
+item.source
+.split("\n")
+.filter(v => v.trim() !== "")
+.map(v => `<li>${v}</li>`)
+.join("")
+}
+</ul>
+</div>
+
+</div>
+
+${getXiesheng(item.kanji).map(row => `
+
+`).join("")}
+
+</div>
+`
+: ""
+
+}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function handleSearchKey(event){
+
+    if(event.key === "Enter"){
+        searchKanji();
+    }
+
+}
+
+function searchKanji(){
+
+    const text =
+        document.getElementById("searchInput").value.trim();
+
+    // 空欄なら消す
+    if(text === ""){
+
+        currentView = [];
+
+        document.getElementById("kanjiContainer").innerHTML = `
+            <p class="initial-message">
+            上部の検索欄から漢字を検索してください。
+            </p>
+        `;
+
+        return;
+    }
+
+    let filtered = [];
+
+    if(searchMode === "kanji"){
+
+        filtered = kanjiDB.filter(item =>
+            item.kanji.includes(text)
+        );
+
+    }else{
+
+        filtered = kanjiDB.filter(item =>
+            item.onyomi.includes(text) ||
+            item.kunyomi.includes(text)
+        );
+
+    }
+
+    currentView = filtered;
+
+    // 見つからなかった
+    if(filtered.length === 0){
+
+        document.getElementById("kanjiContainer").innerHTML = `
+
+            <div class="empty-message">
+            「${text}」はまだ追加されていません。追加されるまでお待ちください。
+            </div>
+
+        `;
+
+        return;
+    }
+
+    // 表示
+    displayKanji(filtered);
+
+}
+
+function openEditModal(index){
+    currentIndex = index;
+
+    const item = currentView[index]; // ←ここが重要
+    currentIndex = index;
+
+document.getElementById("editNo").value = item.no;
+document.getElementById("editKanji").value = item.kanji;
+
+document.getElementById("editUnicode").value = item.unicode;
+document.getElementById("editCJK").value = item.cjk;
+document.getElementById("editStrokes").value = item.strokes;
+
+document.getElementById("editOnyomi").value = item.onyomi;
+document.getElementById("editKunyomi").value = item.kunyomi;
+
+document.getElementById("editKorean").value =
+item.korean || "";
+
+document.getElementById("editVietnamese").value =
+item.vietnamese || "";
+
+document.getElementById("editCantonese").value =
+item.cantonese || "";
+
+document.getElementById("editMeaning").value =
+item.meaning;
+
+document.getElementById("editEtymology").value =
+item.etymology;
+
+document.getElementById("editNotes").value =
+item.notes || "";
+
+document.getElementById("editVariants").value =
+item.variants;
+
+document.getElementById("editOracle").value =
+item.oracle.join("\n");
+
+document.getElementById("editBronze").value =
+item.bronze.join("\n");
+
+document.getElementById("editBamboo").value =
+(item.bamboo || []).join("\n");
+
+document.getElementById("editSlip").value =
+(item.slip || []).join("\n");
+
+document.getElementById("editSeal").value =
+item.seal.join("\n");
+
+document.getElementById("editModal").style.display =
+"flex";
+
+document.getElementById("editSource").value =
+item.source;
+
+}
+
+function closeModal(){
+
+document.getElementById("editModal").style.display =
+"none";
+
+}
+
+function saveKanji(){
+
+
+    const target = kanjiDB.find(
+        item => item.no === document.getElementById("editNo").value
+    );
+
+    if(!target) return;
+
+    target.kanji =
+        document.getElementById("editKanji").value;
+
+    target.unicode =
+        document.getElementById("editUnicode").value;
+
+    target.cjk =
+        document.getElementById("editCJK").value;
+
+    target.strokes =
+        document.getElementById("editStrokes").value;
+
+    target.onyomi =
+        document.getElementById("editOnyomi").value;
+
+    target.kunyomi =
+        document.getElementById("editKunyomi").value;
+
+    target.korean =
+        document.getElementById("editKorean").value;
+
+    target.vietnamese =
+        document.getElementById("editVietnamese").value;
+
+    target.cantonese =
+        document.getElementById("editCantonese").value;
+
+    target.meaning =
+        document.getElementById("editMeaning").value;
+
+    target.etymology =
+        document.getElementById("editEtymology").value;
+
+    target.variants =
+        document.getElementById("editVariants").value;
+
+    target.notes =
+        document.getElementById("editNotes").value;
+        
+    target.oracle =
+        document.getElementById("editOracle").value.split("\n").filter(v=>v);
+
+    target.bronze =
+        document.getElementById("editBronze").value.split("\n").filter(v=>v);
+
+    target.bamboo =
+        document.getElementById("editBamboo").value.split("\n").filter(v=>v);
+
+    target.slip =
+        document.getElementById("editSlip").value.split("\n").filter(v=>v);
+
+    target.seal =
+        document.getElementById("editSeal").value.split("\n").filter(v=>v);
+
+    target.source =
+        document.getElementById("editSource").value;
+
+closeModal();
+
+displayKanji(currentView);
+
+}
+
+function loadData(){
+    const saved = localStorage.getItem("kanjiDB");
+    if(saved){
+        return JSON.parse(saved);
+    }
+    return kanjiDB;
+}
+
+
+
+function saveData(){
+    localStorage.setItem("kanjiDB", JSON.stringify(kanjiDB));
+}
+
+function addKanji(){
+saveData();
+
+kanjiDB.push({
+
+no:"",
+kanji:"新",
+
+unicode:"",
+cjk:"CJK Unified Ideographs",
+strokes:"",
+
+onyomi:"",
+kunyomi:"",
+
+oldChinese:"",
+middleChinese:"",
+chinese:"",
+
+meaning:"",
+etymology:"",
+variants:"",
+source:"",
+
+oracle:[],
+bronze:[],
+chu:[],
+bamboo:[],
+slip:[],
+seal:[],
+
+});
+
+}
+
+let newsOpen = false;
+
+function initializeNews(){
+
+    const allNews =
+        document.querySelectorAll(".news-item");
+
+    allNews.forEach((item,index)=>{
+
+        if(index >= 3){
+            item.style.display = "none";
+            item.classList.add("hidden-news");
+        }
+
+    });
+
+}
+
+function toggleNews(){
+
+    const hiddenNews =
+        document.querySelectorAll(".hidden-news");
+
+    const button =
+        document.querySelector(".news-toggle-btn");
+
+    newsOpen = !newsOpen;
+
+    hiddenNews.forEach(item=>{
+
+        item.style.display =
+            newsOpen ? "block" : "none";
+
+    });
+
+    button.textContent =
+        newsOpen
+        ? "閉じる"
+        : "過去の更新を見る";
+
+}
+
+function setOCSystem(system){
+
+    ocSystem = system;
+
+    document.getElementById("btnFushi")
+    .classList.remove("active");
+
+    document.getElementById("btnBS")
+    .classList.remove("active");
+
+    if(system === "fushido"){
+        document.getElementById("btnFushi")
+        .classList.add("active");
+    }else{
+        document.getElementById("btnBS")
+        .classList.add("active");
+    }
+
+    
+
+    displayKanji(currentView);
+
+}
+
+
+
+
+</script>
+
+
+<script src="data.js"></script>
+<script src="xiesheng.js"></script>
+<script>
+
+history.scrollRestoration = "manual";
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+initializeNews();
+
+const page =
+document.getElementById("page");
+
+page.style.opacity = "1";
+
+requestAnimationFrame(()=>{
+page.classList.add("loaded");
+});
+
+const selected =
+localStorage.getItem("selectedKanji");
+
+// 一覧から来た
+if(selected){
+
+document.getElementById(
+"searchInput"
+).value =
+selected;
+
+searchKanji();
+
+// 検索欄の少し上へ移動
+setTimeout(()=>{
+
+document
+.querySelector(".search-area")
+.scrollIntoView({
+behavior:"instant",
+block:"start"
+});
+
+},50);
+
+localStorage.removeItem(
+"selectedKanji"
+);
+
+// 普通に開いた
+}else{
+
+window.scrollTo({
+top:0,
+behavior:"instant"
+});
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
